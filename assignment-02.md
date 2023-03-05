@@ -12,13 +12,13 @@ and push to your github repository.
 
 1. Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
-.  The upper bound is ⍬(n^0.63093). 
+.  The upper bound is $Theta(n^0.63093)$. 
 .  
 .  
 .  
 .  
   * $W(n)=5W(n/4)+n$
-.  The upper bound is O(n^{log4(5)}) or O(n^1.16096).
+.  The upper bound is $O(n^{log4(5)}) or O(n^1.16096)$.
 .  
 .  
 .  
@@ -30,19 +30,19 @@ and push to your github repository.
 .  
 .  
   * $W(n)=9W(n/3)+n^2$
-.  The upper bound is O(n^{2}\logn).
+.  The upper bound is $O(n^{2}\logn)$.
 .  
 .  
 .  
 .  
   * $W(n)=8W(n/2)+n^3$
-.  The upper bound is O(n^{3}\logn).
+.  The upper bound is $O(n^{3}\logn)$.
 .  
 .  
 .  
 .  
   * $W(n)=49W(n/25)+n^{3/2}\log n$
-.  The upper bound is O(n^{3/2}\logn).
+.  The upper bound is $O(n^{3/2}\logn)$.
 .  
 .  
 .  
@@ -54,7 +54,7 @@ and push to your github repository.
 .  
 .  
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
-.  The upper bound is O(n^{c+1}).
+.  The upper bound is $O(n^{c+1})$.
 .  
 .  
 .  
@@ -81,7 +81,7 @@ and push to your github repository.
     What are the asymptotic running times of each of these algorithms?
     Which algorithm would you choose?
 
-    Algorithm A can be represented as T(n) = 5T(n/2) + n. Algorithm B can be represented as T(n) = 2T(n-1) + 1. Algorithm C can be represented as T(n) = 9T(n/3) + n^2. The asymptotic running time of Algorithm A is O(n^2.32193). The asymptotic running time of Algorithm B is O(2^n). The asymptotic running time of Algorithm C is O(n^2\logn). I would choose Alorithm C because its aymptotic running time, O(n^2\logn), has the slowest growth.
+    Algorithm A can be represented as T(n) = 5T(n/2) + n. Algorithm B can be represented as T(n) = 2T(n-1) + 1. Algorithm C can be represented as $T(n) = 9T(n/3) + n^2$. The asymptotic running time of Algorithm A is $O(n^2.32193)$. The asymptotic running time of Algorithm B is $O(2^n)$. The asymptotic running time of Algorithm C is $O(n^2\logn)$. I would choose Alorithm C because its aymptotic running time, $O(n^2\logn)$, has the slowest growth.
 
 
 3. Now that you have some practice solving recurrences, let's work on
