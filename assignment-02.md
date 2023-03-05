@@ -12,54 +12,63 @@ and push to your github repository.
 
 1. Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
+
 The upper bound is $⍬(n^{0.63093})$. 
 .  
 .  
 .  
 .  
   * $W(n)=5W(n/4)+n$
+
 The upper bound is $⍬(n^{log4(5)}) or O(n^{1.16096})$.
 .  
 .  
 .  
 .  
   * $W(n)=7W(n/7)+n$
+
 The upper bound is $⍬(nlogn)$.
 .  
 .  
 .  
 .  
   * $W(n)=9W(n/3)+n^2$
+
 The upper bound is $⍬(n^{2}logn)$.
 .  
 .  
 .  
 .  
   * $W(n)=8W(n/2)+n^3$
+
 The upper bound is $⍬(n^{3}logn)$.
 .  
 .  
 .  
 .  
   * $W(n)=49W(n/25)+n^{3/2}\log n$
+
 The upper bound is $⍬(n^{3/2}logn)$.
 .  
 .  
 .  
 .  
   * $W(n)=W(n-1)+2$
+
 The upper bound is $⍬(n)$.
 .  
 .  
 .  
 .  
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
+
 The upper bound is $⍬(n^{c+1})$.
 .  
 .  
 .  
 .  
   * $W(n)=W(\sqrt{n})+1$
+
 The upper bound is $⍬(log(log(n)))$.
 
 
