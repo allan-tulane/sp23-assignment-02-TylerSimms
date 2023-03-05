@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:** Tyler Simms
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -12,54 +12,55 @@ and push to your github repository.
 
 1. Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
-.  
+.  The upper bound is ⍬(n^0.63093). 
 .  
 .  
 .  
 .  
   * $W(n)=5W(n/4)+n$
-.  
+.  The upper bound is O(n^{log4(5)}) or O(n^1.16096).
 .  
 .  
 .  
 .  
   * $W(n)=7W(n/7)+n$
-.  
+.  The upper bound is O(nlogn).
 .  
 .  
 .  
 .  
   * $W(n)=9W(n/3)+n^2$
-.  
+.  The upper bound is O(n^{2}\logn).
 .  
 .  
 .  
 .  
   * $W(n)=8W(n/2)+n^3$
-.  
+.  The upper bound is O(n^{3}\logn).
 .  
 .  
 .  
 .  
   * $W(n)=49W(n/25)+n^{3/2}\log n$
-.  
+.  The upper bound is O(n^{3/2}\logn).
 .  
 .  
 .  
 .  
   * $W(n)=W(n-1)+2$
-.  
+.  The upper bound is O(n).
 .  
 .  
 .  
 .  
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
-.  
+.  The upper bound is O(n^{c+1}).
 .  
 .  
 .  
 .  
   * $W(n)=W(\sqrt{n})+1$
+    The upper bound is O(log(log(n))).
 
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
@@ -80,6 +81,8 @@ and push to your github repository.
     What are the asymptotic running times of each of these algorithms?
     Which algorithm would you choose?
 
+    Algorithm A can be represented as T(n) = 5T(n/2) + n. Algorithm B can be represented as T(n) = 2T(n-1) + 1. Algorithm C can be represented as T(n) = 9T(n/3) + n^2. The asymptotic running time of Algorithm A is O(n^2.32193). The asymptotic running time of Algorithm B is O(2^n). The asymptotic running time of Algorithm C is O(n^2\logn). I would choose Alorithm C because its aymptotic running time, O(n^2\logn), has the slowest growth.
+
 
 3. Now that you have some practice solving recurrences, let's work on
   implementing some algorithms. In lecture we discussed a divide and
@@ -93,6 +96,8 @@ and push to your github repository.
   subquadratic time. Then test the empirical running times across a
   variety of inputs to test whether your code scales in the manner
   described by the asymptotic runtime. Please refer to Recitation 3 for some basic implementations, and Eqs (7) and (8) in the slides https://github.com/allan-tulane/cmps2200-slides/blob/main/module-02-recurrences/recurrences-integer-multiplication.ipynb
+
+The code's runtimes do scale in the manner described by the asymptotic runtime. The runtimes grow much slower than the regular quadratic implementation. This result is expected because this implementation is subquadratic.
  
  
 

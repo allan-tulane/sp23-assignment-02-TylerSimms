@@ -43,22 +43,76 @@ def pad(x,y):
         y = ['0'] + y
     return x,y
 
+def _subquadratic_multiply(x, y):
+  xvec = x.binary_vec
+  yvec = y.binary_vec
+  xvec, yvec = pad(xvec, yvec)
+
+  n = max(len(xvec), len(yvec))
+
+  if x.decimal_val <= 1 and y.decimal_val <= 1:
+    number = BinaryNumber(x.decimal_val * y.decimal_val)
+    return number
+  else:
+    x_left, x_right = split_number(xvec)
+    y_left, y_right = split_number(yvec)
+
+  xadd = x_left.decimal_val + x_right.decimal_val
+  yadd = y_left.decimal_val + y_right.decimal_val
+  xsum = BinaryNumber(xadd)
+  ysum = BinaryNumber(yadd)
+
+  mult1 = _subquadratic_multiply(x_left, y_left)
+  mult2 = _subquadratic_multiply(xsum, ysum)
+  mult3 = _subquadratic_multiply(x_right, y_right)
+
+  shift1 = bit_shift(mult1, n)
+  sub = mult2.decimal_val - mult1.decimal_val - mult3.decimal_val
+  minus = BinaryNumber(sub)
+  shift2 = bit_shift(minus, n//2)
+
+  answer = shift1.decimal_val + shift2.decimal_val + mult3.decimal_val
+  product = BinaryNumber(answer)
+  
+  return product
 
 
 def subquadratic_multiply(x, y):
-    ### TODO
-    pass
-    ###
+  return _subquadratic_multiply(x, y).decimal_val
 
 ## Feel free to add your own tests here.
 def test_multiply():
-    assert subquadratic_multiply(BinaryNumber(2), BinaryNumber(2)) == 2*2
+  assert subquadratic_multiply(BinaryNumber(2), BinaryNumber(2)) == 2*2
+  assert subquadratic_multiply(BinaryNumber(4), BinaryNumber(4)) == 4*4
+  assert subquadratic_multiply(BinaryNumber(8), BinaryNumber(8)) == 8*8
+  assert subquadratic_multiply(BinaryNumber(3), BinaryNumber(7)) == 3*7
+  assert subquadratic_multiply(BinaryNumber(5), BinaryNumber(7)) == 5*7
+  assert subquadratic_multiply(BinaryNumber(4), BinaryNumber(9)) == 4*9
+  assert subquadratic_multiply(BinaryNumber(6), BinaryNumber(4)) == 6*4
+  assert subquadratic_multiply(BinaryNumber(24), BinaryNumber(82)) == 24*82
 
 def time_multiply(x, y, f):
     start = time.time()
     # multiply two numbers x, y using function f
+    f(x, y)
     return (time.time() - start)*1000
 
     
     
+print(time_multiply(BinaryNumber(10), BinaryNumber(10), subquadratic_multiply))
+print(time_multiply(BinaryNumber(100), BinaryNumber(100), subquadratic_multiply))
+print(time_multiply(BinaryNumber(1000), BinaryNumber(1000), subquadratic_multiply))
+print(time_multiply(BinaryNumber(10000), BinaryNumber(10000), subquadratic_multiply))
+print(time_multiply(BinaryNumber(100000), BinaryNumber(100000), subquadratic_multiply))
+print(time_multiply(BinaryNumber(1000000), BinaryNumber(1000000), subquadratic_multiply))
+print(time_multiply(BinaryNumber(10000000), BinaryNumber(10000000), subquadratic_multiply))
+print(time_multiply(BinaryNumber(100000000), BinaryNumber(100000000), subquadratic_multiply))
 
+print(subquadratic_multiply(BinaryNumber(2), BinaryNumber(2)))
+print(subquadratic_multiply(BinaryNumber(4), BinaryNumber(4)))
+print(subquadratic_multiply(BinaryNumber(8), BinaryNumber(8)))
+print(subquadratic_multiply(BinaryNumber(3), BinaryNumber(7)))
+print(subquadratic_multiply(BinaryNumber(5), BinaryNumber(7)))
+print(subquadratic_multiply(BinaryNumber(4), BinaryNumber(9)))
+print(subquadratic_multiply(BinaryNumber(6), BinaryNumber(4)))
+print(subquadratic_multiply(BinaryNumber(24), BinaryNumber(82)))
