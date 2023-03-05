@@ -20,7 +20,7 @@ The upper bound is $⍬(n^{0.63093})$
 .  
   * $W(n)=5W(n/4)+n$
 
-The upper bound is $⍬(n^{log4(5)}) or O(n^{1.16096})$
+The upper bound is $⍬(n^{log4(5)}) or ⍬(n^{1.16096})$
 .  
 .  
 .  
