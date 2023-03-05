@@ -28,12 +28,18 @@ The upper bound is $⍬(n^{log4(5)}) or O(n^{1.16096})$.
   * $W(n)=7W(n/7)+n$
 
 The upper bound is $⍬(nlogn)$.
-.  
-.  
-.  
+
+
+
+
+
+
   * $W(n)=9W(n/3)+n^2$
 
 The upper bound is $⍬(n^{2}logn)$.
+
+
+
 
 
 
