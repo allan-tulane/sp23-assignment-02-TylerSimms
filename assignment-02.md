@@ -33,10 +33,10 @@ The upper bound is $⍬(nlogn)$.
 .  
   * $W(n)=9W(n/3)+n^2$
 
-The upper bound is $⍬(n^{2}logn)$. 
-.  
-.  
-.  
+The upper bound is $⍬(n^{2}logn)$.
+
+
+
   * $W(n)=8W(n/2)+n^3$
 
 The upper bound is $⍬(n^{3}logn)$.
