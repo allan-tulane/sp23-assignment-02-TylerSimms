@@ -69,7 +69,7 @@ The upper bound is $⍬(n^{c+1})$
 .  
   * $W(n)=W(\sqrt{n})+1$
 
-The upper bound is $⍬(log(log(n)))$
+The upper bound is $⍬(log(log(n)))$.
 
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
