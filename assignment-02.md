@@ -31,7 +31,6 @@ The upper bound is $⍬(nlogn)$.
 .  
 .  
 .  
-.  
   * $W(n)=9W(n/3)+n^2$
 
 The upper bound is $⍬(n^{2}logn)$.
